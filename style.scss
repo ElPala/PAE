@@ -1,0 +1,15 @@
+$temas:claro,oscuro;
+$bcolores:lightcoral,darkgray;
+$colores:white,black;
+@for $i from 1 through length($temas){ 
+  $tema:nth($temas,$i);
+  $bcolor:nth($bcolores,$i);
+  @for $c from 1 through length($colores){
+      $color:nth($colores,$c);
+      @for $x from 1 through length($bcolores){
+        .tema-#{$tema}-#{$x}{
+          background-color:$bcolor;
+          color:$color;}
+      }
+    }
+  }
